@@ -11,13 +11,14 @@ import org.eclipse.microprofile.openapi.annotations.security.SecurityRequirement
         info=@Info(
                 title = "",
                 version = ""
-        ),
-        security = @SecurityRequirement(name="bearerAuth",scopes={"read:pets", "write:pets"}),
-        components = @Components(
+        )
+        ,security = @SecurityRequirement(name="bearerAuth",scopes={"read:pets", "write:pets"})
+        //components added here aren't reflecting in all resource endpoints as expected
+        /*,components = @Components(
                 responses = {
                         @APIResponse(responseCode = "401",description = "Unauthorized"),
                         @APIResponse(responseCode = "403",description = "Forbidden")
                 }
-        )
+        )*/
 )
 public class OpenApiConfig extends Application { }
